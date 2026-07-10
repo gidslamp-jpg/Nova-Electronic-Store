@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA — Electronics Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="announce">
+  <p>Free shipping on orders over $75 &nbsp;·&nbsp; 2-year warranty on all devices &nbsp;·&nbsp; 30-day returns</p>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="header__inner container">
+    <a href="#" class="logo">
+      <span class="logo__mark">N</span>
+      <span class="logo__text">NOVA</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#deals">Deals</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">Support</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="cartToggle" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h2l1.6 10.2A2 2 0 0 0 9.6 18h7.8a2 2 0 0 0 2-1.7L20.5 9H6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="currentColor"/><circle cx="18" cy="21" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="search-panel" id="searchPanel">
+    <div class="container search-panel__inner">
+      <svg viewBox="0 0 24 24" fill="none" class="search-panel__icon"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search headphones, cameras, keyboards…" id="searchInput">
+      <button class="icon-btn" id="searchClose">✕</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ CART DRAWER ============ -->
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer__head">
+    <h3>Your Cart</h3>
+    <button class="icon-btn" id="cartClose">✕</button>
+  </div>
+  <div class="cart-drawer__items" id="cartItems">
+    <p class="cart-empty">Your cart is empty. Add a device to get started.</p>
+  </div>
+  <div class="cart-drawer__foot">
+    <div class="cart-total">
+      <span>Subtotal</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <button class="btn btn--primary btn--block">Checkout</button>
+  </div>
+</aside>
+<div class="overlay" id="overlay"></div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow">Fall lineup / 01</p>
+        <h1 class="hero__title">Hardware that<br>earns its <span class="hl">specs.</span></h1>
+        <p class="hero__desc">Curated audio, computing and imaging gear — bench-tested before it ever reaches your cart. No filler products, no inflated numbers.</p>
+        <div class="hero__actions">
+          <a href="#shop" class="btn btn--primary">Shop the drop</a>
+          <a href="#categories" class="btn btn--ghost">Browse categories</a>
+        </div>
+        <div class="hero__trust">
+          <div><strong>48k+</strong><span>verified reviews</span></div>
+          <div><strong>2 yr</strong><span>standard warranty</span></div>
+          <div><strong>4.8/5</strong><span>avg. rating</span></div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="spec-card">
+          <div class="spec-card__top">
+            <span class="spec-card__tag">FEATURED</span>
+            <span class="spec-card__id">SKU-AX44</span>
+          </div>
+          <div class="device-render">
+            <svg viewBox="0 0 320 320" class="device-svg" aria-hidden="true">
+              <circle cx="160" cy="160" r="150" class="ring ring--outer"/>
+              <circle cx="160" cy="160" r="118" class="ring ring--mid"/>
+              <circle cx="160" cy="160" r="86" fill="var(--surface)" stroke="var(--ink)" stroke-width="2"/>
+              <circle cx="160" cy="160" r="52" fill="var(--accent)"/>
+              <circle cx="160" cy="160" r="14" fill="var(--ink)"/>
+              <line x1="160" y1="10" x2="160" y2="34" stroke="var(--ink)" stroke-width="2"/>
+              <line x1="160" y1="286" x2="160" y2="310" stroke="var(--ink)" stroke-width="2"/>
+            </svg>
+            <div class="callout callout--a"><span class="callout__dot"></span><span class="callout__label">40mm driver</span></div>
+            <div class="callout callout--b"><span class="callout__dot"></span><span class="callout__label">38h battery</span></div>
+            <div class="callout callout--c"><span class="callout__dot"></span><span class="callout__label">ANC −32dB</span></div>
+          </div>
+          <p class="spec-card__name">Aria X4 Wireless Headphones</p>
+          <div class="spec-card__foot">
+            <span class="price">$249.00</span>
+            <button class="btn btn--dark btn--sm add-to-cart" data-name="Aria X4 Wireless Headphones" data-price="249.00">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ticker">
+      <div class="ticker__track">
+        <span>DRIVER 40MM</span><span>·</span><span>BATTERY 38H</span><span>·</span><span>ANC −32DB</span><span>·</span><span>BT 5.3</span><span>·</span><span>USB-C PD</span><span>·</span><span>144HZ</span><span>·</span><span>IPX5</span><span>·</span>
+        <span>DRIVER 40MM</span><span>·</span><span>BATTERY 38H</span><span>·</span><span>ANC −32DB</span><span>·</span><span>BT 5.3</span><span>·</span><span>USB-C PD</span><span>·</span><span>144HZ</span><span>·</span><span>IPX5</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">02 / Browse</p>
+        <h2>Shop by category</h2>
+      </div>
+      <div class="cat-grid">
+        <a href="#shop" class="cat-card" data-filter="audio">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M14 28v-6a10 10 0 0 1 20 0v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="9" y="26" width="9" height="12" rx="3" stroke="currentColor" stroke-width="2"/><rect x="30" y="26" width="9" height="12" rx="3" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Audio</span>
+          <small>18 products</small>
+        </a>
+        <a href="#shop" class="cat-card" data-filter="computing">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="7" y="10" width="34" height="21" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 35h40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 35l1-4h8l1 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Computing</span>
+          <small>24 products</small>
+        </a>
+        <a href="#shop" class="cat-card" data-filter="imaging">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="14" width="36" height="24" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="26" r="7" stroke="currentColor" stroke-width="2"/><path d="M17 14l2.5-4h9L31 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Imaging</span>
+          <small>12 products</small>
+        </a>
+        <a href="#shop" class="cat-card" data-filter="wearables">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="14" y="10" width="20" height="28" rx="6" stroke="currentColor" stroke-width="2"/><path d="M18 10V6h12v4M18 38v4h12v-4" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Wearables</span>
+          <small>9 products</small>
+        </a>
+        <a href="#shop" class="cat-card" data-filter="smart-home">
+          <svg viewBox="0 0 48 48" fill="none"><path d="M8 22L24 8l16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 20v18h24V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="30" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Smart Home</span>
+          <small>15 products</small>
+        </a>
+        <a href="#shop" class="cat-card" data-filter="accessories">
+          <svg viewBox="0 0 48 48" fill="none"><rect x="10" y="16" width="28" height="16" rx="8" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="24" r="2.4" fill="currentColor"/><circle cx="24" cy="24" r="2.4" fill="currentColor"/><circle cx="31" cy="24" r="2.4" fill="currentColor"/></svg>
+          <span>Accessories</span>
+          <small>21 products</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOP / PRODUCT GRID ============ -->
+  <section class="section section--tint" id="shop">
+    <div class="container">
+      <div class="section__head section__head--row">
+        <div>
+          <p class="eyebrow">03 / Catalog</p>
+          <h2>Bestsellers this month</h2>
+        </div>
+        <div class="filters" id="filters">
+          <button class="filter-chip is-active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="audio">Audio</button>
+          <button class="filter-chip" data-filter="computing">Computing</button>
+          <button class="filter-chip" data-filter="imaging">Imaging</button>
+          <button class="filter-chip" data-filter="wearables">Wearables</button>
+          <button class="filter-chip" data-filter="smart-home">Smart Home</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid"><!-- injected by script.js --></div>
+    </div>
+  </section>
+
+  <!-- ============ DEAL BANNER ============ -->
+  <section class="deal" id="deals">
+    <div class="container deal__inner">
+      <div class="deal__copy">
+        <p class="eyebrow eyebrow--light">04 / Limited run</p>
+        <h2>The Orbit Mini Speaker.<br>−30% for 72 hours.</h2>
+        <p>Pocket-sized, room-filling. Our best-reviewed speaker just dropped to its lowest price of the year.</p>
+        <div class="countdown" id="countdown">
+          <div><span id="cd-h">00</span><small>hrs</small></div>
+          <div><span id="cd-m">00</span><small>min</small></div>
+          <div><span id="cd-s">00</span><small>sec</small></div>
+        </div>
+        <button class="btn btn--primary add-to-cart" data-name="Orbit Mini Speaker" data-price="59.30">Claim the deal — $59.30</button>
+      </div>
+      <div class="deal__visual">
+        <svg viewBox="0 0 200 200" class="orbit-svg" aria-hidden="true">
+          <circle cx="100" cy="100" r="90" class="orbit-ring"/>
+          <circle cx="100" cy="100" r="90" class="orbit-ring orbit-ring--dash"/>
+          <circle cx="100" cy="100" r="60" fill="var(--ink)"/>
+          <circle cx="100" cy="100" r="34" fill="var(--surface)"/>
+          <circle cx="100" cy="100" r="10" fill="var(--accent-2)"/>
+        </svg>
+        <span class="deal__badge">−30%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">05 / Word on the bench</p>
+        <h2>What people are running</h2>
+      </div>
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Battery figures actually match the box. Three weeks of daily commutes on one charge for the Aria X4."</p>
+          <div class="review-card__who"><strong>Kwabena O.</strong><span>Verified buyer</span></div>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Switched from a big-brand laptop stand to the Fold Riser — sturdier, and it packs flat for travel."</p>
+          <div class="review-card__who"><strong>Adaeze N.</strong><span>Verified buyer</span></div>
+        </article>
+        <article class="review-card">
+          <div class="stars">★★★★☆</div>
+          <p>"Orbit Mini punches well above its size. Only wish the case came in more colors."</p>
+          <div class="review-card__who"><strong>Priya S.</strong><span>Verified buyer</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--tint" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <p class="eyebrow">06 / Support</p>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="accordion" id="accordion">
+        <div class="accordion__item is-open">
+          <button class="accordion__trigger">
+            <span>How long is shipping?</span><span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__panel"><p>Most orders ship within 24 hours and arrive in 2–5 business days. Express options appear at checkout.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">
+            <span>What's covered under warranty?</span><span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__panel"><p>Every device ships with a 2-year manufacturer warranty covering defects in materials and workmanship.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">
+            <span>Can I return an opened item?</span><span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__panel"><p>Yes — we accept returns within 30 days of delivery, opened or not, as long as the item is in resellable condition.</p></div>
+        </div>
+        <div class="accordion__item">
+          <button class="accordion__trigger">
+            <span>Do you ship internationally?</span><span class="accordion__icon">+</span>
+          </button>
+          <div class="accordion__panel"><p>We currently ship to over 40 countries. Duties and taxes are calculated at checkout, no surprises at the door.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter">
+    <div class="container newsletter__inner">
+      <div>
+        <h2>Get the spec sheet before anyone else.</h2>
+        <p>New drops, restocks and bench-test notes — roughly twice a month, zero spam.</p>
+      </div>
+      <form class="newsletter__form" id="newsletterForm">
+        <input type="email" placeholder="you@email.com" required>
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#" class="logo">
+        <span class="logo__mark">N</span>
+        <span class="logo__text">NOVA</span>
+      </a>
+      <p>Bench-tested electronics for people who read the datasheet.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Shop</h4>
+      <a href="#categories">Audio</a>
+      <a href="#categories">Computing</a>
+      <a href="#categories">Imaging</a>
+      <a href="#categories">Wearables</a>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+      <a href="#">Sustainability</a>
+    </div>
+    <div class="footer__col">
+      <h4>Support</h4>
+      <a href="#faq">FAQ</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© 2026 NOVA Electronics. All rights reserved.</p>
+    <div class="footer__social">
+      <a href="#" aria-label="X">X</a>
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="YouTube">YT</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
